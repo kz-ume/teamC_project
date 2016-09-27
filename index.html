@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="./css/main.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>物件Mapサンプル</title>
+  </head>
+  <body>
+    <div class="content-box">
+      <div class="search-bar">
+        <div class="search-item">
+          <div class="list-left">築年数</div>
+          <select id="chikunensu" class="list-input"></select>
+        </div>
+        <div class="search-item">
+          <div class="list-left">家賃下限</div>
+          <input type="text" id="chinryo_from" class="list-input">
+          <span class="tag">円</span>
+        </div>
+        <div class="search-item">
+          <div class="list-left">家賃上限</div>
+          <input type="text" id="chinryo_to" class="list-input">
+          <span class="tag">円</span>
+        </div>
+        <div class="search-item">
+          <div class="list-left">敷金/礼金</div>
+          <table>
+            <tr>
+              <td>
+                <input id="shikikin" type="checkbox"><span class="checkbox">敷金無し</span>
+              </td>
+              <td>
+                <input id="reikin" type="checkbox"><span class="checkbox">礼金無し</span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="search-item">
+          <div class="list-left">間取り</div>
+          <div class="list-checkbox">
+            <table>
+              <tr>
+                <td>
+                  <input type="checkbox" name="madori" value="1R"><span class="checkbox">ワンルーム</span>
+                </td>
+                <td>
+                  <input type="checkbox" name="madori" value="1K"><span class="checkbox">1K</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="checkbox" name="madori" value="1DK"><span class="checkbox">1DK</span>
+                </td>
+                <td>
+                  <input type="checkbox" name="madori" value="1LDK"><span class="checkbox">1LDK</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="checkbox" name="madori" value="2K"><span class="checkbox">2K</span>
+                </td>
+                <td>
+                  <input type="checkbox" name="madori" value="2DK"><span class="checkbox">2DK</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="checkbox" name="madori" value="2LDK"><span class="checkbox">2LDK</span>
+                </td>
+                <td>
+                  <input type="checkbox" name="madori" value="3K"><span class="checkbox">3K</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="checkbox" name="madori" value="3DK"><span class="checkbox">3DK</span>
+                </td>
+                <td>
+                  <input type="checkbox" name="madori" value="3LDK"><span class="checkbox">3LDK</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="checkbox" name="madori" value="4DK"><span class="checkbox">4DK</span>
+                </td>
+                <td>
+                  <input type="checkbox" name="madori" value="4LDK"><span class="checkbox">4LDK</span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        
+                <div class="search-item">
+          <div class="list-left">駅からの距離</div>
+          <div class="list-checkbox">
+            <table>
+              <tr>
+                <td>
+                  <input type="checkbox" name="ekitoho" value="5"><span class="checkbox">5分</span>
+                </td>
+                <td>
+                  <input type="checkbox" name="ekitoho" value="10"><span class="checkbox">10分</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="checkbox" name="ekitoho" value="15"><span class="checkbox">15分</span>
+                </td>
+                <td>
+                  <input type="checkbox" name="ekitoho" value="20"><span class="checkbox">20分</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="checkbox" name="ekitoho" value="25"><span class="checkbox">25分</span>
+                </td>
+                <td>
+                  <input type="checkbox" name="ekitoho" value="30"><span class="checkbox">30分</span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        
+        <div class="search-item">
+          <div class="list-left"></div>
+          <button id="search-button">検索</button>
+        </div>
+      </div>
+      <div id="map-canvas" class="map-embed">
+
+      </div>
+      <div class="content-bar">
+        <div id="bukken" class="tatemono">
+        </div>
+      </div>
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDf8MOuQbm82v-ykYavmr8Wh92EXl_B4bs&libraries=visualization"></script>
+    <script src="./js/formManager.js"></script>
+    <script src="./js/dataManager.js"></script>
+    <script src="./js/bukkenViewManager.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
