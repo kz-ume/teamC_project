@@ -189,15 +189,16 @@ font-family: "Meiryo", sans-serif;
 }
 
 .tatemono{
-  /*min-width:300px;*/
   margin:10px;
   text-align: center;
   font-size: 12px;
   padding: 2px;
   margin-bottom: 3px;
-  border: solid;
-  border-width:1px;
+  float:left;
+    width:20%;
+   
 }
+
 
 .checkbox{
   width: 50px;
