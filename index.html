@@ -10,7 +10,7 @@
    <div class = "box">
     <div class="content-box">
       <div class="search-bar">
-    <div class="menu">
+      
     <label for="Panel1" class="kakunou"  data-target="acdn" value = "0" >検索項目一覧</label>
     
     <ul id="acdn">
@@ -42,7 +42,7 @@
           </table>
         </div>
       
-       <div class="search-item">
+        <div class="search-item">
           <div class="list-left">間取り</div>
           <div class="list-checkbox">
             <table>
@@ -97,17 +97,13 @@
             </table>
           </div>
         </div>
-        <div class="search-item">
-          <div class="list-left"></div>
-          <button id="search-button">検索</button>
-        </div>
      </ul>
       
         
         <div class="search-item">
           <div class="list-left">
-          <input type="radio" id="chinryo" value="chinryo" name = "koumoku" required>
-          <label class="label" for="chinryo">値段の安い順</label>
+          <input type="radio" id="yasui" value="chinryo" name = "koumoku" required>
+          <label class="label" for="yasui">値段の安い順</label>
           </div>
         </div>
         
@@ -126,7 +122,6 @@
         
         <div class="search-item">
           <div class="list-left">
-          <input type="radio" id="new" name = "koumoku" value="4">
           <label class="label" for="new">新しい物件順</label>
           </div>
         </div>
@@ -151,13 +146,16 @@
           <label class="label" for="keiyaku">契約期間の長い順</label>
           </div>
         </div>
+        <div class="search-item">
+            <div class="list-left"></div>
+          <button id="search-button">物件を調べる</button>
+        </div>
       </div>
-      </div>
+      
       <div id="map-canvas" class="map-embed">
         //マップ描画
       </div>
-
-    </div>
+</div>
      <div class = "ranking">
          rankss
      </div>

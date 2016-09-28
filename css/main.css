@@ -9,7 +9,7 @@
     height:99%;
   height:70vh;
   display: flex;
-  flex-direction: row;
+  
   justify-content: center;
  }
 
@@ -62,6 +62,7 @@ input[type="radio"]:checked + label {
     border-radius: 15px;
     font-family: "Meiryo", sans-serif;
 
+
 }
 
 .kakunou {
@@ -81,6 +82,8 @@ input[type="radio"]:checked + label {
   width:80px;
   padding: 5px;
   text-align: left;
+      font-family: "Meiryo", sans-serif;
+
 }
 
 .list-input{
@@ -88,15 +91,19 @@ input[type="radio"]:checked + label {
   width:120px;
   padding: 5px;
   text-align: left;
+      
+
 }
 
 .list-text{
+    float: right;
   width:96px;
   padding: 5px;
 }
 
 
 .list-madori_number{
+    float: right;
   float: left;
   width:50px;
   margin-right:10px;
@@ -104,22 +111,32 @@ input[type="radio"]:checked + label {
 }
 
 .list-madori_type{
+    float: right;
   float: left;
   width:70px;
   margin-right:10px;
   padding: 5px;
 }
 
-.search-item{
-  width: 300px;
-  float:left;
-  padding: 5px;
+.search{
+    width: 250px;
+    margin-left: auto; 
     margin-right: auto;
-    text-align: left
+    float:right;
 }
 
-.search-button{
-  align:right;
+.search-item{
+  width: 250px;
+  float:right;
+    margin-right: auto;
+}
+
+#search-button{
+  float:right;
+  width:250px;
+    font-size:24px;
+    color: white;
+background-color: darkorange;
 }
 
 .tag{
@@ -129,6 +146,8 @@ input[type="radio"]:checked + label {
   height: 29px;
   width: 20px;
   margin-right: 5px;
+font-family: "Meiryo", sans-serif;
+
 
 }
 
@@ -183,14 +202,12 @@ input[type="radio"]:checked + label {
 .checkbox{
   width: 50px;
   font-size: 12px;
-
 }
 
 .list-checkbox{
 
-  float: left;
   width:160px;
   padding: 5px;
   text-align: left;
-
+float:right
 }
