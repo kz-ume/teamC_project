@@ -10,8 +10,11 @@
    <div class = "box">
     <div class="content-box">
       <div class="search-bar">
+    <div class="menu">
+    <label for="Panel1" class="kakunou"  value = "0" >検索項目一覧</label>
     
-      <div class="search-item">
+    
+        <div class="search-item">
           <div class="list-left">築年数</div>
           <select id="chikunensu" class="list-input"></select>
         </div>
@@ -94,6 +97,9 @@
             </table>
           </div>
         </div>
+   
+</div>
+      
         
         <div class="search-item">
           <div class="list-left">
@@ -162,5 +168,18 @@
     <script src="./js/dataManager.js"></script>
     <script src="./js/bukkenViewManager.js"></script>
     <script src="./js/app.js"></script>
+    <script>
+$(function(){
+    var nowchecked = $('input[name=koumoku]:checked').val();
+    $('input[name=koumoku]').click(function(){
+        if($(this).val() == nowchecked) {
+            $(this).prop('checked', false);
+            nowchecked = false;
+        } else {
+            nowchecked = $(this).val();
+        }
+    });
+});
+</script>
   </body>
 </html>
