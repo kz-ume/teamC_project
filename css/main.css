@@ -44,7 +44,7 @@ input[type="radio"]:checked + label {
 }
 /* マウスオーバーしたときのスタイル */
 .label:hover {
-  background-color: #E2EDF9; 
+  background-color: #F9E2E2; 
 }
 /* lableのスタイル */
 .label {
@@ -58,6 +58,8 @@ input[type="radio"]:checked + label {
   padding-right: 20px;
   cursor: pointer; 
     border-radius: 15px;
+    font-family: "Meiryo", sans-serif;
+
 }
 
 .list-left{
