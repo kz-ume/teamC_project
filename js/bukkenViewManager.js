@@ -22,7 +22,8 @@ function BukkenViewManager(map) {
         pins.length = 0;
         // ピンのオブジェクトの配列を新しく作成
         for (var bukkenInfo of bukkenInfoList) {
-            pins.push(new Pin(bukkenInfo, map));
+            var testPin = new Pin(bukkenInfo,map);
+            pins.push(testPin);
         }
     }
 }
@@ -34,8 +35,16 @@ function Pin(bukkenInfo, map) {
     //================== コンストラクタ ==================//
     var marker = new google.maps.Marker({     // Google Map上のマーカーのオブジェクト
         map: map,
-        position: new google.maps.LatLng(bukkenInfo.lat, bukkenInfo.lng)
+        position: new google.maps.LatLng(bukkenInfo.lat, bukkenInfo.lng),
+        icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=京|7FFF00|000000'
     });
+    function highlightMarker(marker, highlight) {
+    var color = "#FE7569";
+    if (highlight) {
+        color = "#0000FF";
+    }
+    marker.setImage(getIcon(color).image);
+}
 
     // 地図上のマーカーがクリックされた際に呼ばれるイベントハンドラの設定
     google.maps.event.addListener(marker, 'click', onClick.bind(this));

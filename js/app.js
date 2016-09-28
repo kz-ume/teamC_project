@@ -35,9 +35,16 @@ function App() {
 
         // 検索条件に合致する物件のリストを取得
         var bukkenInfoList = dataManager.search(cond);
-
-        // 物件リストの各物件のピンを地図上に立てる
-        bukkenViewManager.update(bukkenInfoList);
+        
+        //５つを選ぶ時
+        if(true){
+            var best5List = dataManager.selectBest5(bukkenInfoList,"chinryo");
+            // 物件リストの各物件のピンを地図上に立てる
+            bukkenViewManager.update(best5List);
+        }else{
+            // 物件リストの各物件のピンを地図上に立てる
+            bukkenViewManager.update(bukkenInfoList);
+        }
     }
 }
 
