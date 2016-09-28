@@ -5,6 +5,7 @@ function FormManager() {
         clicked = true;
     }
     
+    var selectedIdName = "";
     var select5ButtonArray = [];
     //なんかまとめたい
     select5ButtonArray.push(document.getElementById("chinryo"));
@@ -15,11 +16,7 @@ function FormManager() {
     select5ButtonArray.push(document.getElementById("heyasuu"));
     select5ButtonArray.push(document.getElementById("keiyaku"));
     //上位５個選ぶボタンが押されてるか確認
-    for(var i=0;i<select5ButtonArray.length;i++){
-        select5ButtonArray[i].onclick = function(){
-            select5 = true;
-        }
-    }
+   
     var chikunensu = new FormPulldowm('chikunensu',
         [
             {'text': '', 'cond': {}},
@@ -56,10 +53,32 @@ function FormManager() {
     this.isClicked = function() {
         return clicked;
     }
+//    this.checkSelected =function(){
+//        for(var i=0;i<select5ButtonArray.length;i++){
+//            select5ButtonArray[i].onclick = function(){
+//                selectedIdName = select5ButtonArray[i];
+//                select5 = true;
+//                return;
+//            }
+//        }
+//        select5 = false;
+//    }
+    this.checkSelected =function(){
+        for(var i=0;i<select5ButtonArray.length;i++){
+            if(select5ButtonArray[i].checked){
+                selectedIdName = select5ButtonArray[i];
+                select5 = true;
+                return;
+            }
+        }
+        select5 = false;
+    }
     this.select5isClicked = function(){
         return select5;
     }
-    
+    this.getSelectedId = function(){
+        return selectedIdName.id;
+    }
     this.getCond = function() {
         clicked = false;
         var cond = {};
