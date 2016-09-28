@@ -36,8 +36,8 @@ function App() {
         // 検索条件に合致する物件のリストを取得
         var bukkenInfoList = dataManager.search(cond);
         
-        //５つを選ぶ時
-        if(true){
+        //5つを選ぶ時
+        if(formManager.select5isClicked()){
             var best5List = dataManager.selectBest5(bukkenInfoList,"chinryo");
             // 物件リストの各物件のピンを地図上に立てる
             bukkenViewManager.update(best5List);

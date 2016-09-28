@@ -4,7 +4,22 @@ function FormManager() {
     searchButton.onclick = function() {
         clicked = true;
     }
-
+    
+    var select5ButtonArray = [];
+    //なんかまとめたい
+    select5ButtonArray.push(document.getElementById("chinryo"));
+    select5ButtonArray.push(document.getElementById("mennseki"));
+    select5ButtonArray.push(document.getElementById("ekitoho"));
+    select5ButtonArray.push(document.getElementById("chikunensu"));
+    select5ButtonArray.push(document.getElementById("high"));
+    select5ButtonArray.push(document.getElementById("heyasuu"));
+    select5ButtonArray.push(document.getElementById("keiyaku"));
+    //上位５個選ぶボタンが押されてるか確認
+    for(var i=0;i<select5ButtonArray.length;i++){
+        select5ButtonArray[i].onclick = function(){
+            select5 = true;
+        }
+    }
     var chikunensu = new FormPulldowm('chikunensu',
         [
             {'text': '', 'cond': {}},
@@ -34,12 +49,17 @@ function FormManager() {
     ];
 
     var clicked = false;
-
+    //5つ選ぶかどうかのフラグ
+    var select5 = false;
+    
     //===================== メソッド =====================//
     this.isClicked = function() {
         return clicked;
     }
-
+    this.select5isClicked = function(){
+        return select5;
+    }
+    
     this.getCond = function() {
         clicked = false;
         var cond = {};
