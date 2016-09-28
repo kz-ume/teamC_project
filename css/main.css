@@ -62,6 +62,18 @@ input[type="radio"]:checked + label {
 
 }
 
+.kakunou {
+    background: #f65347;
+    color: #fff;
+    padding: 10px;
+    display: block;
+    margin: 0;
+    border: 1px solid #fff;
+    font-family: "Meiryo", sans-serif;
+}
+
+
+
 .list-left{
   float: left;
   width:80px;
