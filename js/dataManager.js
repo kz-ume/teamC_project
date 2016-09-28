@@ -74,6 +74,46 @@ function DataManager() {
             });
         })
     }
+    
+    //最小もしくは最大の5つを返す
+    this.selectBest5 = function(bukkenInfoList,target){
+        var bestBukkenArray = [];
+    
+        //昇順にソート
+        bukkenInfoList.sort(function(a,b){
+            var aChinryo = a[target];
+            var bChinryo = b[target];
+            if(aChinryo < bChinryo) return -1;
+            if(aChinryo > bChinryo) return 1;
+            return 0;
+        });
+        //降順
+//        bukkenInfoList.sort(function(a,b)){
+//            if(a.target > b.target) return -1;
+//            if(a.target < b.target) return 1;
+//            return 0;
+//        }
+//                //nullを除く
+//        var nullRemovedList = bukkenInfoList.filter(function(v,i){
+//            return (v!==null);
+//        })
+
+        
+        //重複を除く
+        var tempBukkenList = {};
+        for(var i=0;i < bukkenInfoList.length;i++){
+            tempBukkenList[bukkenInfoList[i]["tatemono_name"]] = bukkenInfoList[i];
+        }
+        var uniqueBukkenList = [];
+        for(var key in tempBukkenList){
+            uniqueBukkenList.push(tempBukkenList[key]);
+            }
+
+        for(var i=0;i<5;i++){
+            bestBukkenArray.push(uniqueBukkenList[i]);
+        }
+        return bestBukkenArray;
+    }
 }
 
 
