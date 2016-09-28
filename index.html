@@ -11,6 +11,90 @@
     <div class="content-box">
       <div class="search-bar">
     
+      <div class="search-item">
+          <div class="list-left">築年数</div>
+          <select id="chikunensu" class="list-input"></select>
+        </div>
+        <div class="search-item">
+          <div class="list-left">家賃下限</div>
+          <input type="text" id="chinryo_from" class="list-input">
+          <span class="tag">円</span>
+        </div>
+        <div class="search-item">
+          <div class="list-left">家賃上限</div>
+          <input type="text" id="chinryo_to" class="list-input">
+          <span class="tag">円</span>
+        </div>
+        <div class="search-item">
+          <div class="list-left">敷金/礼金</div>
+          <table>
+            <tr>
+              <td>
+                <input id="shikikin" type="checkbox"><span class="checkbox">敷金無し</span>
+              </td>
+              <td>
+                <input id="reikin" type="checkbox"><span class="checkbox">礼金無し</span>
+              </td>
+            </tr>
+          </table>
+        </div>
+      
+       <div class="search-item">
+          <div class="list-left">間取り</div>
+          <div class="list-checkbox">
+            <table>
+              <tr>
+                <td>
+                  <input type="checkbox" name="madori" value="1R"><span class="checkbox">ワンルーム</span>
+                </td>
+                <td>
+                  <input type="checkbox" name="madori" value="1K"><span class="checkbox">1K</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="checkbox" name="madori" value="1DK"><span class="checkbox">1DK</span>
+                </td>
+                <td>
+                  <input type="checkbox" name="madori" value="1LDK"><span class="checkbox">1LDK</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="checkbox" name="madori" value="2K"><span class="checkbox">2K</span>
+                </td>
+                <td>
+                  <input type="checkbox" name="madori" value="2DK"><span class="checkbox">2DK</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="checkbox" name="madori" value="2LDK"><span class="checkbox">2LDK</span>
+                </td>
+                <td>
+                  <input type="checkbox" name="madori" value="3K"><span class="checkbox">3K</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="checkbox" name="madori" value="3DK"><span class="checkbox">3DK</span>
+                </td>
+                <td>
+                  <input type="checkbox" name="madori" value="3LDK"><span class="checkbox">3LDK</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="checkbox" name="madori" value="4DK"><span class="checkbox">4DK</span>
+                </td>
+                <td>
+                  <input type="checkbox" name="madori" value="4LDK"><span class="checkbox">4LDK</span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        
         <div class="search-item">
           <div class="list-left">
           <input type="radio" id="chinryo" value="chinryo" name = "koumoku" required>
