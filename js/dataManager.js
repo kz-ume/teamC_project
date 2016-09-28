@@ -81,10 +81,10 @@ function DataManager() {
     
         //昇順にソート
         bukkenInfoList.sort(function(a,b){
-            var aChinryo = a[target];
-            var bChinryo = b[target];
-            if(aChinryo < bChinryo) return -1;
-            if(aChinryo > bChinryo) return 1;
+            var aTemp = a[target];
+            var bTemp = b[target];
+            if(aTemp < bTemp) return -1;
+            if(aTemp > bTemp) return 1;
             return 0;
         });
         //降順
@@ -169,6 +169,10 @@ function BukkenDataLoader() {
         // 間取り。like 1K、1R、2LDK
         data.madori = rawData.madori_name;
         data.ekitoho =""+ rawData.kotsu_ekitoho_1;
+        
+        data.high = rawData.shozaikai;
+        data.heyasuu = rawData.madori_heyasu;
+        data.keiyaku = rawData.keiyaku_kikan;
         return data;
     }
 
