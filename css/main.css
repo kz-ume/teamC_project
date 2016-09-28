@@ -1,9 +1,13 @@
-@charset "UTF-8" ;
+.box{
+  height:100vh;
+  display: flex;
+    flex-direction: column;
+  justify-content: center;
+ }
 
 .content-box{
-  margin-right: auto;
-  margin-left : auto;
-  height:100vh; 
+    height:99%;
+  height:70vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -11,34 +15,49 @@
 
 .search-bar{
   flex-direction: column;
-  flex: 1 0 260px;
-  /*width:260px;*/
-  height:99%; 
-  min-height: 960px;
-  float: left;
-  overflow: scroll;
+  width:270px;
+  height:99%;
+  height: 70Vh;
+  overflow-x: hidden;
+border-bottom: 1px solid #000000;
 }
 
-.content-bar{
-  flex: 1 0 300px;
-  /*
-  flex-grow:1;
-  flex-basis:300px;
-  */
-  border-width: 1;
-  min-height: 960px;
-  height:99%; 
-  flex-direction: column;
-  overflow: scroll;
+.ranking{
+ height: 500px;
 }
 .map-embed{
-  flex: 20 1 auto;
-  /*
-  flex-grow:6; 
-  flex-basis:400px;
-  */
-  height:99%; 
-  min-height: 960px;
+  flex: 1;
+  height:99%;
+  height: 70Vh;
+    border-bottom: 1px solid #000000;
+
+}
+
+/* ラジオボタン非表示 */
+input[type=radio] {
+  display: none;
+}
+/* チェック時*/
+input[type="radio"]:checked + label {
+  background: #f65347;
+  color: #FFF; 
+}
+/* マウスオーバーしたときのスタイル */
+.label:hover {
+  background-color: #E2EDF9; 
+}
+/* lableのスタイル */
+.label {
+    width:180px;
+  color: #000;
+  border: #dddddd solid 2px;
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  cursor: pointer; 
+    border-radius: 15px;
 }
 
 .list-left{
