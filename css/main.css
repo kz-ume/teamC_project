@@ -19,7 +19,9 @@
   height:99%;
   height: 70Vh;
   overflow-x: hidden;
-border-bottom: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  
+  
 }
 
 .ranking{
@@ -112,6 +114,8 @@ input[type="radio"]:checked + label {
   width: 300px;
   float:left;
   padding: 5px;
+    margin-right: auto;
+    text-align: left
 }
 
 .search-button{
