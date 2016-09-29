@@ -47,6 +47,7 @@ function Pin(bukkenInfo, map) {
 //        scaledSize: new google.maps.Size(100, 48),
         icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=京|7FFF00|000000'
     });
+    
     function highlightMarker(marker, highlight) {
     var color = "#FE7569";
     if (highlight) {
@@ -69,14 +70,15 @@ function Pin(bukkenInfo, map) {
      * 地図上のマーカーがクリックされた際の処理
      */
     function onClick() {
-        var formManager = new FormManager();
-        console.log(formManager.select5isClicked());
         
-        if(formManager.select5isClicked()){
         // 物件情報を画面に表示
-        insertHTMLElement('ranking', generateHTMLElement(bukkenInfo,0));
+        if(best5search_flag==false){
+            console.log(best5search_flag);
+        insertHTMLElement('bukken0', generateHTMLElement(bukkenInfo,0));
+    
         }
-        else{
+        
+        else if(best5search_flag==true){
         var tatemonos = document.getElementsByClassName("tatemono_matome");
         var clicked = document.getElementById(bukkenInfo["tatemono_name"]);
     
@@ -85,7 +87,6 @@ function Pin(bukkenInfo, map) {
     }
         clicked.style.backgroundColor="yellow";
     }
-    
     }
 
     // pinを消す
