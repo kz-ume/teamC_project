@@ -40,6 +40,7 @@ function App() {
         //上位5つを選ぶ時
         formManager.checkSelected();
         if(formManager.select5isClicked()){
+            best5search_flag=true;
             var selectedId = formManager.getSelectedId();
             var best5List = dataManager.selectBest5(bukkenInfoList,selectedId);
             // 物件リストの各物件のピンを地図上に立てる
@@ -47,6 +48,7 @@ function App() {
             //
             bukkenViewManager.displayBestFive(best5List);
         }else{
+            best5search_flag=false;
             // 物件リストの各物件のピンを地図上に立てる
             bukkenViewManager.update(bukkenInfoList);
         }
