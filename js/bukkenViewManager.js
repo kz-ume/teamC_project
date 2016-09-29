@@ -50,7 +50,8 @@ function BukkenViewManager(map) {
         this.displayBestFive = function(bukkenArray){
         var bukkenInfo = bukkenArray;
         for(var i=0;i<bukkenInfo.length;i++){
-            insertHTMLElement('bukken',generateHTMLElement(bukkenInfo[i]));
+           
+            insertHTMLElement('bukken'+i,generateHTMLElement(bukkenInfo[i]));
         }
     }
 }
@@ -93,7 +94,11 @@ function Pin(bukkenInfo, map, decWidth, decHeight) {
      */
     function onClick() {
         // 物件情報を画面に表示
-        insertHTMLElement('bukken', generateHTMLElement(bukkenInfo));
+//        insertHTMLElement('ranking', generateHTMLElement(bukkenInfo));
+        var clicked = document.getElementByName(bukkenInfo["tatemono_name"]);
+    console.log(clicked)
+        clicked.style.color = "green";
+
     }
 
     // pinを消す
@@ -110,11 +115,12 @@ function Pin(bukkenInfo, map, decWidth, decHeight) {
  */
 function generateHTMLElement(bukkenInfo) {
     var element = document.createElement('div');
-    element.setAttribute('id', 'bukken');
-    element.setAttribute('class', 'tatemono');
+//    element.setAttribute('id', 'bukken');
+//    element.setAttribute('class', 'tatemono');
+    var innerHTML="";
 
-    var innerHTML = '\
-            <div id="tatemono_name" class="tatemono-name"><#tatemono_name></div>\
+    innerHTML = innerHTML+'\
+            <div id="tatemono_name" class="tatemono-name" name="<#tatemono_name>"><#tatemono_name></div>\
             <div id="bukken-image" class="image"></div>\
             <div id="cotent" class="content-text">\
                 <table class="table">\
@@ -147,6 +153,7 @@ function generateHTMLElement(bukkenInfo) {
 
     // 物件情報を置換
     innerHTML = innerHTML.replace('<#tatemono_name>', escapeText(bukkenInfo.tatemono_name));
+    innerHTML = innerHTML.replace('<#tatemono_name>', escapeText(bukkenInfo.tatemono_name));
     innerHTML = innerHTML.replace('<#chikunensu>', bukkenInfo.chikunensu);
     innerHTML = innerHTML.replace('<#chinryo>', bukkenInfo.chinryo);
     innerHTML = innerHTML.replace('<#shikikin>', bukkenInfo.shikikin);
@@ -178,6 +185,8 @@ function escapeText(text) {
  */
 function insertHTMLElement(id, element) {
     var target = document.getElementById(id);
+    console.log(target);
+    
     target.innerHTML = '';
     target.appendChild(element);
 }
