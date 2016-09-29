@@ -99,19 +99,18 @@ function Pin(bukkenInfo, map, decWidth, decHeight,i) {
     function onClick() {
 
      var tatemonos = document.getElementsByClassName("tatemono_matome");
+        var _tatemono = document.getElementsByClassName("tatemono");
      var clicked = document.getElementById(bukkenInfo["tatemono_name"]);
 
      // 物件情報を画面に表示
      if (best5search_flag == false) {
          console.log(best5search_flag);
-         
          for (var j = 1; j < 5; j=j+1) {
              console.log(j);
-             var dom_obj_parent = tatemonos[j].parentNode;
-             dom_obj_parent.removeChild(tatemonos[j]);
+             _tatemono[j].textContent = null;
          
-         insertHTMLElement('bukken0', generateHTMLElement(bukkenInfo, 0));
          }
+        insertHTMLElement('bukken0', generateHTMLElement(bukkenInfo, -1));
          
 
      } else if (best5search_flag == true) {
@@ -141,9 +140,15 @@ function generateHTMLElement(bukkenInfo,rank) {
     element.setAttribute('id', bukkenInfo["tatemono_name"]);
     element.setAttribute('class', 'tatemono_matome');
     var innerHTML="";
-ranknumber=rank+1;
+    if(rank<0){
+         var rankstring =""; 
+    }
+    else{
+        var ranknumber=rank+1;
+        var rankstring=ranknumber+"位";
+    }
     innerHTML = innerHTML+'\
-            <div id="tatemono_name" class="tatemono-name" >'+ranknumber+'位　　<#tatemono_name></div>\
+            <div id="tatemono_name" class="tatemono-name" >'+rankstring+'　<#tatemono_name></div>\
             <div id="bukken-image" class="image"></div>\
             <div id="cotent" class="content-text">\
                 <table class="table">\
