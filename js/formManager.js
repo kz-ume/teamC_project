@@ -11,10 +11,11 @@ function FormManager() {
     select5ButtonArray.push(document.getElementById("chinryo"));
     select5ButtonArray.push(document.getElementById("mennseki"));
     select5ButtonArray.push(document.getElementById("ekitoho"));
-    select5ButtonArray.push(document.getElementById("new"));
+    select5ButtonArray.push(document.getElementById("chikunensu"));
     select5ButtonArray.push(document.getElementById("high"));
     select5ButtonArray.push(document.getElementById("heyasuu"));
     select5ButtonArray.push(document.getElementById("keiyaku"));
+    //上位５個選ぶボタンが押されてるか確認
    
     var chikunensu = new FormPulldowm('chikunensu',
         [
@@ -62,8 +63,7 @@ function FormManager() {
 //        }
 //        select5 = false;
 //    }
-     //上位５個選ぶボタンが押されてるか確認
-    this.checkSelected = function(){
+    this.checkSelected =function(){
         for(var i=0;i<select5ButtonArray.length;i++){
             if(select5ButtonArray[i].checked){
                 selectedIdName = select5ButtonArray[i];

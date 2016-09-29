@@ -77,47 +77,22 @@ function DataManager() {
     
     //最小もしくは最大の5つを返す
     this.selectBest5 = function(bukkenInfoList,target){
-        //昇順-true,降順-false
-        var ascending = true;
-        switch(target){
-            case "new": 
-                target = "chikunensu";
-                ascending = true;
-                break;
-            case "mennseki":
-                ascending = false;
-                break;
-            case "high":
-                ascending = false;
-                break;
-            case "heyasuu":
-                ascending = false;
-                break;
-                
-            default:
-                break;
-        }
         var bestBukkenArray = [];
     
         //昇順にソート
-        if(ascending){
-            bukkenInfoList.sort(function(a,b){
-                var aTemp = a[target];
-                var bTemp = b[target];
-                if(aTemp < bTemp) return -1;
-                if(aTemp > bTemp) return 1;
-                return 0;
-            });
-        }else{
-            //降順
-            bukkenInfoList.sort(function(a,b){
-                var aTemp = a[target];
-                var bTemp = b[target];
-                if(aTemp > bTemp) return -1;
-                if(aTemp < bTemp) return 1;
-                return 0;
-            });
-    }
+        bukkenInfoList.sort(function(a,b){
+            var aTemp = a[target];
+            var bTemp = b[target];
+            if(aTemp < bTemp) return -1;
+            if(aTemp > bTemp) return 1;
+            return 0;
+        });
+        //降順
+//        bukkenInfoList.sort(function(a,b)){
+//            if(a.target > b.target) return -1;
+//            if(a.target < b.target) return 1;
+//            return 0;
+//        }
 //                //nullを除く
 //        var nullRemovedList = bukkenInfoList.filter(function(v,i){
 //            return (v!==null);
@@ -194,7 +169,7 @@ function BukkenDataLoader() {
         // 間取り。like 1K、1R、2LDK
         data.madori = rawData.madori_name;
         data.ekitoho =""+ rawData.kotsu_ekitoho_1;
-        //階段数
+        
         data.high = rawData.shozaikai;
         data.heyasuu = rawData.madori_heyasu;
         data.keiyaku = rawData.keiyaku_kikan;

@@ -26,13 +26,6 @@ function BukkenViewManager(map) {
             pins.push(testPin);
         }
     }
-        //上位５件の物件情報を表示する
-        this.displayBestFive = function(bukkenArray){
-        var bukkenInfo = bukkenArray;
-        for(var i=0;i<bukkenInfo.length;i++){
-            insertHTMLElement('bukken',generateHTMLElement(bukkenInfo[i]));
-        }
-    }
 }
 
 /**
@@ -43,7 +36,6 @@ function Pin(bukkenInfo, map) {
     var marker = new google.maps.Marker({     // Google Map上のマーカーのオブジェクト
         map: map,
         position: new google.maps.LatLng(bukkenInfo.lat, bukkenInfo.lng),
-//        scaledSize: new google.maps.Size(100, 48),
         icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=京|7FFF00|000000'
     });
     function highlightMarker(marker, highlight) {
@@ -64,6 +56,7 @@ function Pin(bukkenInfo, map) {
     this.setIcon = function(url) {
         marker.setIcon(url);
     }
+
     /**
      * 地図上のマーカーがクリックされた際の処理
      */
