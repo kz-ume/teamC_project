@@ -70,24 +70,32 @@ function Pin(bukkenInfo, map) {
      * 地図上のマーカーがクリックされた際の処理
      */
     function onClick() {
-        
-        // 物件情報を画面に表示
-        if(best5search_flag==false){
-            console.log(best5search_flag);
-        insertHTMLElement('bukken0', generateHTMLElement(bukkenInfo,0));
-    
-        }
-        
-        else if(best5search_flag==true){
-        var tatemonos = document.getElementsByClassName("tatemono_matome");
-        var clicked = document.getElementById(bukkenInfo["tatemono_name"]);
-    
-    for(var i = 0;i<tatemonos.length;i++){
-        tatemonos[i].style.backgroundColor="";
-    }
-        clicked.style.backgroundColor="yellow";
-    }
-    }
+
+     var tatemonos = document.getElementsByClassName("tatemono_matome");
+     var clicked = document.getElementById(bukkenInfo["tatemono_name"]);
+
+     // 物件情報を画面に表示
+     if (best5search_flag == false) {
+         console.log(best5search_flag);
+         
+         for (var j = 1; j < 5; j=j+1) {
+             console.log(j);
+             var dom_obj_parent = tatemonos[j].parentNode;
+             dom_obj_parent.removeChild(tatemonos[j]);
+         
+         insertHTMLElement('bukken0', generateHTMLElement(bukkenInfo, 0));
+         }
+         
+
+     } else if (best5search_flag == true) {
+
+         for (var i = 0; i < tatemonos.length; i++) {
+             tatemonos[i].style.backgroundColor = "";
+         }
+         clicked.style.backgroundColor = "yellow";
+     }
+ }
+
 
     // pinを消す
     this.del = function() {
@@ -106,9 +114,9 @@ function generateHTMLElement(bukkenInfo,rank) {
     element.setAttribute('id', bukkenInfo["tatemono_name"]);
     element.setAttribute('class', 'tatemono_matome');
     var innerHTML="";
-rank=rank+1;
+ranknumber=rank+1;
     innerHTML = innerHTML+'\
-            <div id="tatemono_name" class="tatemono-name" >'+rank+'位　　<#tatemono_name></div>\
+            <div id="tatemono_name" class="tatemono-name" >'+ranknumber+'位　　<#tatemono_name></div>\
             <div id="bukken-image" class="image"></div>\
             <div id="cotent" class="content-text">\
                 <table class="table">\
