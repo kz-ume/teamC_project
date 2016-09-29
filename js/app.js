@@ -43,7 +43,7 @@ function App() {
             var selectedId = formManager.getSelectedId();
             var best5List = dataManager.selectBest5(bukkenInfoList,selectedId);
             // 物件リストの各物件のピンを地図上に立てる
-            bukkenViewManager.update(best5List);
+            bukkenViewManager.updateForBest5(best5List);
             //
             bukkenViewManager.displayBestFive(best5List);
         }else{

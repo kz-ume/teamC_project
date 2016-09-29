@@ -22,7 +22,27 @@ function BukkenViewManager(map) {
         pins.length = 0;
         // ピンのオブジェクトの配列を新しく作成
         for (var bukkenInfo of bukkenInfoList) {
-            var testPin = new Pin(bukkenInfo,map);
+            var testPin = new Pin(bukkenInfo,map,32,32);
+            pins.push(testPin);
+        }
+    }
+        //上位５件の場合のピン立て
+        this.updateForBest5 = function(bukkenInfoList) {
+        // pinsの初期化
+        for (var pin of pins) {
+            pin.del();
+            delete pin;
+        }
+        pins.length = 0;
+        // ピンのオブジェクトの配列を新しく作成
+        var decWidth = 64;
+        var decHeight = 64;
+        for (var bukkenInfo of bukkenInfoList) {
+            var testPin = new Pin(bukkenInfo,map,decWidth,decHeight);
+//            var pinWidth = 64;
+//            var pinHeight = 110;
+            decWidth -= 8;
+            decHeight -= 8;
             pins.push(testPin);
         }
     }
@@ -38,13 +58,17 @@ function BukkenViewManager(map) {
 /**
  * ピンのオブジェクト
  */
-function Pin(bukkenInfo, map) {
+function Pin(bukkenInfo, map, decWidth, decHeight) {
     //================== コンストラクタ ==================//
     var marker = new google.maps.Marker({     // Google Map上のマーカーのオブジェクト
         map: map,
         position: new google.maps.LatLng(bukkenInfo.lat, bukkenInfo.lng),
 //        scaledSize: new google.maps.Size(100, 48),
-        icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=京|7FFF00|000000'
+//        icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=京|7FFF00|000000'
+         icon: {
+                    url: '1475132741_pointer.png',
+                    scaledSize: new google.maps.Size(decWidth, decHeight)
+                }
     });
     function highlightMarker(marker, highlight) {
     var color = "#FE7569";
