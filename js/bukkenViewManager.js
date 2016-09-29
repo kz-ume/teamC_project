@@ -53,7 +53,7 @@ function BukkenViewManager(map) {
         var bukkenInfo = bukkenArray;
         for(var i=0;i<bukkenInfo.length;i++){
            
-            insertHTMLElement('bukken'+i,generateHTMLElement(bukkenInfo[i]));
+            insertHTMLElement('bukken'+i,generateHTMLElement(bukkenInfo[i],i));
         }
     }
 }
@@ -96,12 +96,23 @@ function Pin(bukkenInfo, map, decWidth, decHeight,i) {
      * 地図上のマーカーがクリックされた際の処理
      */
     function onClick() {
+        var formManager = new FormManager();
+        console.log(formManager.select5isClicked());
+        
+        if(formManager.select5isClicked()){
         // 物件情報を画面に表示
-//        insertHTMLElement('ranking', generateHTMLElement(bukkenInfo));
-        var clicked = document.getElementByName(bukkenInfo["tatemono_name"]);
-    console.log(clicked)
-        clicked.style.color = "green";
-
+        insertHTMLElement('ranking', generateHTMLElement(bukkenInfo,0));
+        }
+        else{
+        var tatemonos = document.getElementsByClassName("tatemono_matome");
+        var clicked = document.getElementById(bukkenInfo["tatemono_name"]);
+    
+    for(var i = 0;i<tatemonos.length;i++){
+        tatemonos[i].style.backgroundColor="";
+    }
+        clicked.style.backgroundColor="yellow";
+    }
+    
     }
 
     // pinを消す
@@ -116,14 +127,14 @@ function Pin(bukkenInfo, map, decWidth, decHeight,i) {
 /**
  * 物件情報のHTML要素を生成
  */
-function generateHTMLElement(bukkenInfo) {
+function generateHTMLElement(bukkenInfo,rank) {
     var element = document.createElement('div');
-//    element.setAttribute('id', 'bukken');
-//    element.setAttribute('class', 'tatemono');
+    element.setAttribute('id', bukkenInfo["tatemono_name"]);
+    element.setAttribute('class', 'tatemono_matome');
     var innerHTML="";
-
+rank=rank+1;
     innerHTML = innerHTML+'\
-            <div id="tatemono_name" class="tatemono-name" name="<#tatemono_name>"><#tatemono_name></div>\
+            <div id="tatemono_name" class="tatemono-name" >'+rank+'位　　<#tatemono_name></div>\
             <div id="bukken-image" class="image"></div>\
             <div id="cotent" class="content-text">\
                 <table class="table">\
