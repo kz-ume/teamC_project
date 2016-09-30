@@ -210,6 +210,7 @@ function generateHTMLElement(bukkenInfo, rank, selectedId) {
                         <td><#option></td>\
                     </tr>\
                 </table>\
+      <div class = "result" id = "result' + ranknumber +'">'+tyoeName+':'+bukkenInfo[replaceName]+'</div>\
             </div>';
     // 物件情報を置換
     innerHTML = innerHTML.replace('<#tatemono_name>', escapeText(bukkenInfo.tatemono_name));
