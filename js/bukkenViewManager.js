@@ -205,13 +205,15 @@ function generateHTMLElement(bukkenInfo, rank, selectedId) {
                         <td>間取り</td>\
                         <td><#madori></td>\
                     </tr>\
-                    <tr>\
-                        <td><#genre></td>\
-                        <td><#option></td>\
-                    </tr>\
-                </table>\
-      <div class = "result" id = "result' + ranknumber +'">'+tyoeName+':'+bukkenInfo[replaceName]+'</div>\
-            </div>';
+                </table>' ;
+    if(ranknumber>0){
+      innerHTML = innerHTML+'<br><div class = "result" id = "result' + ranknumber +'">'+tyoeName+':'+bukkenInfo[replaceName]+'</div>\
+            </div>';}
+       else{
+       innerHTML = innerHTML+'</div>';
+       }
+       
+       
     // 物件情報を置換
     innerHTML = innerHTML.replace('<#tatemono_name>', escapeText(bukkenInfo.tatemono_name));
     innerHTML = innerHTML.replace('<#tatemono_name>', escapeText(bukkenInfo.tatemono_name));
