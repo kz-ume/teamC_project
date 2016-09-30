@@ -14,7 +14,6 @@ function FormManager() {
     select5ButtonArray.push(document.getElementById("new"));
     select5ButtonArray.push(document.getElementById("high"));
     select5ButtonArray.push(document.getElementById("heyasuu"));
-    select5ButtonArray.push(document.getElementById("keiyaku"));
    
     var chikunensu = new FormPulldowm('chikunensu',
         [
