@@ -172,6 +172,27 @@ font-family: "Meiryo", sans-serif;
     float:right;
 }
 
+.result{
+    font-size: 13px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+}
+
+#result1{
+    background-color: gold;
+    color: red;
+}
+
+#result2{
+    background-color: silver;
+    color: blue;
+}
+
+#result3{
+    background-color: #ba8324;
+}
+
 .content-text{
    margin:5px;
    padding:5px;
@@ -192,7 +213,7 @@ font-family: "Meiryo", sans-serif;
   border-width:2px;
   border-color: black;
     background-color: #f65347;
-    border-radius: 10px;
+   
     color:white;
     font-size: 10px;
     

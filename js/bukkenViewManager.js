@@ -1,5 +1,4 @@
-/**
- * @author raito.ochi
+ /*@author raito.ochi
  */
 
 /**
@@ -29,8 +28,9 @@ function BukkenViewManager(map) {
         //上位５件の物件情報を表示する
         this.displayBestFive = function(bukkenArray){
         var bukkenInfo = bukkenArray;
+            
         for(var i=0;i<bukkenInfo.length;i++){
-           
+           console.log(bukkenInfo[i]);
             insertHTMLElement('bukken'+i,generateHTMLElement(bukkenInfo[i],i));
         }
     }
@@ -150,7 +150,8 @@ function generateHTMLElement(bukkenInfo,rank) {
                         <td><#madori></td>\
                     </tr>\
                 </table>\
-            </div>';
+            </div>\
+        <div class = "result" id = "result'+ranknumber+'">tst</div>';
 
     // 物件情報を置換
     innerHTML = innerHTML.replace('<#tatemono_name>', escapeText(bukkenInfo.tatemono_name));
