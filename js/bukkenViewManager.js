@@ -150,8 +150,7 @@ function generateHTMLElement(bukkenInfo,rank) {
                         <td><#madori></td>\
                     </tr>\
                 </table>\
-            </div>\
-        <div class = "result" id = "result'+ranknumber+'">tst</div>';
+        </div>';
 
     // 物件情報を置換
     innerHTML = innerHTML.replace('<#tatemono_name>', escapeText(bukkenInfo.tatemono_name));
